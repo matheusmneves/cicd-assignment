@@ -22,8 +22,8 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh 'npm install -g netlify-cli'
-                sh 'netlify deploy --site ${NETLIFY_SITE_ID} --auth ${NETLIFY_AUTH_TOKEN} --prod --dir=build'
+                sh 'npm install netlify-cli --no-save'
+                sh 'npx netlify deploy --site ${NETLIFY_SITE_ID} --auth ${NETLIFY_AUTH_TOKEN} --prod --dir=build'
             }
         }
     }
